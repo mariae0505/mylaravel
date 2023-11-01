@@ -22,6 +22,7 @@ Route::get('/', function () {
 });
 
 
+
 Route::get('/register', [RegisterController::class, 'show']);
 Route::post('/register', [RegisterController::class, 'register']);
 
@@ -30,3 +31,4 @@ Route::post('/login', [LoginController::class, 'login']);
 
 Route::get('/home', [HomeController::class, 'index']);
 Route::get('/logout', [LogoutController::class, 'logout']);
+Route::post('/logout', [LogoutController::class, 'logout']);

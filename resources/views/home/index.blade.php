@@ -1,14 +1,20 @@
-@extends('layouts.app-master')
-@section('content')
-    <h1> Home </h1>
-    @auth
-        <p >Bienvenido {{auth()->user()->name  ?? auth()->user()->username}}  autenticado .</p>
-        <a href="/logout"> Salir </a </p>
-    @endauth
-    @guest
-        <p >Aceeso limitado.
-            <a href="/login"> inicia </a </p>
-        </p>
-    @endguest
-@endsection
+@extends('adminlte::page')
 
+
+@section('title', 'Dashboard')
+
+@section('content_header')
+    <h1>Dashboard</h1>
+@stop
+
+@section('content')
+    <p>Welcome to this beautiful admin panel.</p>
+@stop
+
+@section('css')
+    <link rel="stylesheet" href="/css/admin_custom.css">
+@stop
+
+@section('js')
+    <script> console.log('Hi!'); </script>
+@stop
