@@ -192,7 +192,7 @@ return [
     'classes_content_wrapper' => '',
     'classes_content_header' => '',
     'classes_content' => '',
-    'classes_sidebar' => 'sidebar-dark-success elevation-4',
+    'classes_sidebar' => 'sidebar-dark-info elevation-4',
     'classes_sidebar_nav' => '',
     'classes_topnav' => 'navbar-white navbar-light',
     'classes_topnav_nav' => 'navbar-expand',
@@ -253,7 +253,7 @@ return [
     */
 
     'use_route_url' => false,
-    'dashboard_url' => 'home',
+    'dashboard_url' => '/',
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => 'register',
@@ -328,16 +328,15 @@ return [
         //    'route'  => 'welcome',
         //],
         [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
+            'text'        => 'Tablero',
+            'url'         => '/tablero',
             'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
             'label_color' => 'success',
         ],
-        ['header' => 'account_settings'],
+        ['header' => 'Administrador'],
         [
-            'text' => 'profile',
-            'url'  => 'admin/settings',
+            'text' => 'Abogados',
+            'route'  => 'abogados.index',
             'icon' => 'fas fa-fw fa-user',
         ],
         [
