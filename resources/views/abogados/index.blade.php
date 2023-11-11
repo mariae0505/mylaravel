@@ -15,7 +15,8 @@
 
     <div class="card">  
         <div class="card-body">
-            <table class="table-responsive table table-striped">
+            <table id="abogados" class="table table-striped" style="width:100%">
+            {{--  <table class="table-responsive table table-striped">  --}}
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -23,7 +24,8 @@
                         <th>MAXIMOPROCEOS</th>
                         <th>tarjeta</th>
                         <th>OBSERVACION</th>
-                        <th colspan="2"> </th>
+                        <th colspan="2"> Opciones</th>
+                        <th style="display: none"></th> 
                     </tr>
                 </thead>
                 <tbody>
@@ -41,7 +43,9 @@
                                 @csrf
                                 <input type="submit" value="Borrar" class="btn btn-danger btn-small">
                             </form>
-                            
+                        </td>  
+                        <td style="display: none"></td>
+  
                         
 
                     </tr>
@@ -60,9 +64,56 @@
 
 
 @section('css')
-    <link rel="stylesheet" href="/css/admin_custom.css">
-@stop
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css"> 
+@endsection
 
 @section('js')
-    <script> console.log('Hi!'); </script>
-@stop
+    
+   <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+   <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+   <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>    
+   <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script> 
+
+   <script>  
+
+    $(document).ready( function () {
+        $('#abogados').DataTable(
+        { 
+            "paging": true,
+            "language":
+            {
+                "decimal":        "",
+                "emptyTable":     "No data available in table",
+                "info":           "Showing _START_ to _END_ of _TOTAL_ entries",
+                "infoEmpty":      "Showing 0 to 0 of 0 entries",
+                "infoFiltered":   "(filtered from _MAX_ total entries)",
+                "infoPostFix":    "",
+                "thousands":      ",",
+                "lengthMenu":     "Show _MENU_ entries",
+                "loadingRecords": "Loading...",
+                "processing":     "",
+                "search":         "Buscar:",
+                "zeroRecords":    "No matching records found",
+                "paginate": {
+                    "first":      "First",
+                    "last":       "Last",
+                    "next":       "Next",
+                    "previous":   "Previous"
+                },
+                "aria": {
+                    "sortAscending":  ": activate to sort column ascending",
+                    "sortDescending": ": activate to sort column descending"
+                }
+
+                
+                
+                
+            }
+        }
+
+        );
+    } );
+    
+    </script>
+
+@endsection
